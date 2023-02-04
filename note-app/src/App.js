@@ -20,7 +20,7 @@ export default function App() {
   function createNewNote() {
     const newNote = {
       id: nanoid(),
-      title: "Your Title",
+      title: "New Note",
       body: "# Type your note here",
     };
     setNotes((prevNotes) => [newNote, ...prevNotes]);
@@ -33,6 +33,10 @@ export default function App() {
         return note.id === currentNoteId;
       }) || notes[0]
     );
+  }
+
+  function deleteNote(noteId) {
+    setNotes((oldNotes) => oldNotes.filter((note) => note.id !== noteId));
   }
 
   function updateNoteBody(text) {
@@ -65,6 +69,7 @@ export default function App() {
             newNote={createNewNote}
             currentNote={findCurrentNote()}
             setCurrentNoteId={setCurrentNoteId}
+            deleteNote={deleteNote}
           />
           {currentNoteId && (
             <Editor

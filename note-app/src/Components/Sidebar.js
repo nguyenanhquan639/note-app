@@ -14,6 +14,12 @@ export default function Sidebar(props) {
             ? props.currentNote.title
             : note.title}
         </h2>
+        <button
+          className="delete-btn"
+          onClick={() => props.deleteNote(note.id)}
+        >
+          <i className="fa-solid fa-trash-can fa-lg"></i>
+        </button>
       </div>
     </div>
   ));
@@ -22,7 +28,7 @@ export default function Sidebar(props) {
       <div className="sidebar--header">
         <h1>Notes</h1>
         <button className="new-note-btn" onClick={props.newNote}>
-          +
+          <i className="fa-solid fa-plus"></i>
         </button>
       </div>
       {noteElements}
