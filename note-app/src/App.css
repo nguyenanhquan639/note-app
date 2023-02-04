@@ -59,7 +59,7 @@ body {
 
 .sidebar--header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid black;
   margin-bottom: 10px;

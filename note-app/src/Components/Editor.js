@@ -11,6 +11,7 @@ export default function Editor(props) {
         onChange={() => props.updateNoteTitle(event.target.value)}
       />
       <textarea
+        placeholder="# Type your note here"
         value={props.currentNote.body}
         onChange={() => props.updateNoteBody(event.target.value)}
       ></textarea>
